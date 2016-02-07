@@ -11,12 +11,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Button button;
     EditText txt;
     Editable SecretCode;
-    String Message;
+    String Message,encodedMessage;
     int x=0;
 
     public void buttonOnClick(View v) {
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         button = (Button)findViewById(R.id.buttonEncode);
-        txt = (EditText)findViewById(R.id.toEncode);
+        txt = (EditText)findViewById(R.id.toEncodeStr);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -50,9 +51,14 @@ public class MainActivity extends AppCompatActivity {
                 //Do Stuff Here
         SecretCode = txt.getText();
         Message = SecretCode.toString();
-                while(Message.length()> x) {
+                while(Message.length()>= x) {
                     char character = Message.charAt(x); // Takes one value at a Time
                     int ascii = (int) character; //This converts each Character into its ascii Value.
+                    encodedMessage.equals(ascii);
+
+
+
+                    x++;
                 }
 
 
